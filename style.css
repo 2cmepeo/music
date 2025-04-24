@@ -205,8 +205,8 @@ pre {
 .volume {
   position: absolute;
   left: 50%;
-  bottom: -85px;
-  width: -40px;
+  bottom: 45px;
+  width: 40px;
   margin-left: -20px;
   height: 120px;
   opacity: 0;
