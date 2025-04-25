@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+<title>Радио es lv lt слушать бесплатно онлайн | audiobase.ru</title>
+    <meta name="description" content="Слушать бесплатно музыкальные радиостанции в отличном качестве. Легкий сайт для кнопочных телефонов и для быстрой загрузки с плохим качеством интернет. Самый большой каталог онлайн радиостанций на сайте audiobase.ru">
+    <meta name="keywords" content="слушать, бесплатно, онлайн, все каналы, радио, станции, на мобильном, низкая, скорость, плохая связь, соединения, онлайн радио, для кнопочного, телефона,">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="./jquery.min.js"></script>
+<script type="text/javascript" src="./jquery.jplayer.min.js"></script>
+<script type="text/javascript">
+
+//<![CDATA[
+
+$(document).ready(function(){
+
+	// Local copy of jQuery selectors, for performance.
+	var	my_jPlayer = $("#jquery_jplayer"),
+		my_trackName = $("#jp_container .track-name"),
+		my_playState = $("#jp_container .play-state"),
+		my_extraPlayInfo = $("#jp_container .extra-play-info");
+
+	// Some options
+	var	opt_play_first = false, // If true, will attempt to auto-play the default track on page loads. No effect on mobile devices, like iOS.
+		opt_auto_play = true, // If true, when a track is selected, it will auto-play.
+		opt_text_playing = "Now playing", // Text when playing
+		opt_text_selected = "Track selected"; // Text when not playing
+
+	// A flag to capture the first track
+	var first_track = true;
+
+	// Change the time format
+	$.jPlayer.timeFormat.padMin = false;
+	$.jPlayer.timeFormat.padSec = false;
+	$.jPlayer.timeFormat.sepMin = " min ";
+	$.jPlayer.timeFormat.sepSec = " sec";
+
+	// Initialize the play state text
+	my_playState.text(opt_text_selected);
+
+	// Instance jPlayer
+	my_jPlayer.jPlayer({
+		ready: function () {
+			$("#jp_container .track-default").click();
+		},
+		timeupdate: function(event) {
+			my_extraPlayInfo.text(parseInt(event.jPlayer.status.currentPercentAbsolute, 10) + "%");
+		},
+		play: function(event) {
+			my_playState.text(opt_text_playing);
+		},
+		pause: function(event) {
+			my_playState.text(opt_text_selected);
+		},
+		ended: function(event) {
+			my_playState.text(opt_text_selected);
+		},
+		swfPath: "../../dist/jplayer",
+		cssSelectorAncestor: "#jp_container",
+		supplied: "mp3",
+		wmode: "window"
+	});
+
+	// Create click handlers for the different tracks
+	$("#jp_container .track").click(function(e) {
+		my_trackName.text($(this).text());
+		my_jPlayer.jPlayer("setMedia", {
+			mp3: $(this).attr("href")
+		});
+		if((opt_play_first && first_track) || (opt_auto_play && !first_track)) {
+			my_jPlayer.jPlayer("play");
+		}
+		first_track = false;
+		$(this).blur();
+		return false;
+	});
+
+});
+//]]>
+</script>
+
+<style>
+<!--
+
+.demo-container {
+	border: 1px solid #009BE3;
+	padding:0 20px;
+	font-family: "Myriad Pro Regular","Trebuchet MS";
+}
+
+.demo-container a, .demo-container a:link, .demo-container a:visited, .demo-container a:hover, .demo-container a:focus, .demo-container a:active {
+	color: #009BE3;
+}
+
+.demo-container ul {
+	list-style-type:none;
+	padding:0;
+	margin:1em 0;
+	width:100%;
+	overflow:hidden;
+}
+
+.demo-container ul span {
+	color: #A0A600;
+}
+
+.demo-container li {
+	float:left;
+	margin-right:1em;
+}
+
+.demo-container p span.track-name {
+	color: #CC0090;
+}
+
+-->
+</style>
+
+</head>
+<body>
+
+
+		<div id="jquery_jplayer"></div>
+
+		<!-- Using the cssSelectorAncestor option with the default cssSelector class names to enable control association of standard functions using built in features -->
+
+		<div id="jp_container" class="demo-container">
+			<ul>
+				<li><span>Select a stations : </span></li>
+				<li><a href="http://iis.ge:8000/relax.mp3" class="track track-default">Radio Relax (GE)</a></li>
+				<li> | </li>
+				<li><a href="https://stream.relaxfm.ee/cafe_HD" class="track">Radio Relax FM Cafe</a></li>
+				<li> | </li>
+				<li><a href="https://stream.relaxfm.ee/instrumental_HD" class="track">Radio Relax FM
+Instrumental</a></li>
+				<li> | </li>
+				<li><a href="https://stream.relaxfm.ee/jazz_HD" class="track">Radio Relax FM Jazz</a></li>
+				<li> | </li>
+				<li><a href="https://ice6.abradio.cz/relax-morning-birds128.mp3" class="track track-default">Radio Relaxace Birds</a></li>
+				<li> | </li>
+				<li><a href="https://ice6.abradio.cz/relax-fire128.mp3" class="track">Radio Relaxace Fire</a></li>
+				<li> | </li>
+				<li><a href="https://ice6.abradio.cz/relax-sea128.mp3" class="track">Radio Relaxace More</a></li>
+				<li> | </li>
+				<li><a href="https://ice6.abradio.cz/relax-thunder-rain128.mp3" class="track">Radio Relaxace Thunder
+Rain</a></li>
+				<li> | </li>
+				<li><a href="https://ice6.abradio.cz/relax-train128.mp3" class="track track-default">Radio Relaxace Train</a></li>
+				<li> | </li>
+				<li><a href="http://streaming.swisstxt.ch/m/reteuno/mp3_128" class="track">Radio Rete 1</a></li>
+				<li> | </li>
+				<li><a href="http://skymedia-live.bitflip.ee/RETRO" class="track">Radio Retro FM (Эстония) </li>
+				<li> | </li>
+				<li><a href="http://skymedia-live.bitflip.ee/retro1.mp3" class="track">Radio Retro FM Disco</a></li>
+				<li> | </li>
+				<li><a href="http://skymedia-live.bitflip.ee/retro2.mp3" class="track track-default">Radio Retro FM Eestikas</a></li>
+				<li> | </li>
+				<li><a href="https://streaming.revolution935.com/live" class="track">Radio Revolution (USA)</a></li>
+				<li> | </li>
+				<li><a href="http://195.13.164.134:8000/source.mp3" class="track">Radio Rezekne (LV)</a></li>
+				<li> | </li>
+				<li><a href="http://sc2.treraadio.ee/ringfm" class="track">Radio Ring FM (EST)</a></li>
+				<li> | </li>
+			
+				
+			</ul>
+			
+			<p>
+				<span class="play-state"></span> :
+				<span class="track-name">nothing</span>
+				- playback time:
+				<span class="jp-current-time"></span>
+			</p>
+			<ul>
+				<li><a class="jp-play" href="#">Play</a></li>
+				<li><a class="jp-pause" href="#">Pause</a></li>
+				<li><a class="jp-stop" href="#">Stop</a></li>
+			</ul>
+			<ul>
+				<li>volume :</li>
+				<li><a class="jp-mute" href="#">Mute</a></li>
+				<li><a class="jp-unmute" href="#">Unmute</a></li>
+				<li> <a class="jp-volume-bar" href="#">|&lt;----------&gt;|</a></li>
+				<li><a class="jp-volume-max" href="#">Max</a></li>
+			</ul>
+		</div>
+		<br>
+		<style>
+   .btn {
+    display: inline-block; /* Строчно-блочный элемент */
+    background: #8C959D; /* Серый цвет фона */
+    color: #fff; /* Белый цвет текста */
+    padding: 0.5rem 0.5rem; /* Поля вокруг текста */
+    text-decoration: none; /* Убираем подчёркивание */
+    border-radius: 50px; /* Скругляем уголки */
+   }
+  </style>
+
+ <body> 
+  <a href="online-music-radio-stations-3.html" target="_blank" class="btn">Previous</a>
+  <a href="online-music-radio-stations-5.html" target="_blank" class="btn">Next</a>
+			
+		</div>
+
+</body>
+
+</html>

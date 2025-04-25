@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+<title>Online music radio stations | audiobase.ru</title>
+    <meta name="description" content="Listen to music in excellent quality on any device. Big catalog online radio stations. Best music radio. Electronic music">
+    <meta name="keywords" content="excellent quality, on any device, best audio, catalog, online, web radio, internet, stations, mp3, music, listen, techno, trance, deep, house, hardcore, retro, discography, new hits,">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="./jquery.min.js"></script>
+<script type="text/javascript" src="./jquery.jplayer.min.js"></script>
+<script type="text/javascript">
+
+//<![CDATA[
+
+$(document).ready(function(){
+
+	// Local copy of jQuery selectors, for performance.
+	var	my_jPlayer = $("#jquery_jplayer"),
+		my_trackName = $("#jp_container .track-name"),
+		my_playState = $("#jp_container .play-state"),
+		my_extraPlayInfo = $("#jp_container .extra-play-info");
+
+	// Some options
+	var	opt_play_first = false, // If true, will attempt to auto-play the default track on page loads. No effect on mobile devices, like iOS.
+		opt_auto_play = true, // If true, when a track is selected, it will auto-play.
+		opt_text_playing = "Now playing", // Text when playing
+		opt_text_selected = "Track selected"; // Text when not playing
+
+	// A flag to capture the first track
+	var first_track = true;
+
+	// Change the time format
+	$.jPlayer.timeFormat.padMin = false;
+	$.jPlayer.timeFormat.padSec = false;
+	$.jPlayer.timeFormat.sepMin = " min ";
+	$.jPlayer.timeFormat.sepSec = " sec";
+
+	// Initialize the play state text
+	my_playState.text(opt_text_selected);
+
+	// Instance jPlayer
+	my_jPlayer.jPlayer({
+		ready: function () {
+			$("#jp_container .track-default").click();
+		},
+		timeupdate: function(event) {
+			my_extraPlayInfo.text(parseInt(event.jPlayer.status.currentPercentAbsolute, 10) + "%");
+		},
+		play: function(event) {
+			my_playState.text(opt_text_playing);
+		},
+		pause: function(event) {
+			my_playState.text(opt_text_selected);
+		},
+		ended: function(event) {
+			my_playState.text(opt_text_selected);
+		},
+		swfPath: "../../dist/jplayer",
+		cssSelectorAncestor: "#jp_container",
+		supplied: "mp3",
+		wmode: "window"
+	});
+
+	// Create click handlers for the different tracks
+	$("#jp_container .track").click(function(e) {
+		my_trackName.text($(this).text());
+		my_jPlayer.jPlayer("setMedia", {
+			mp3: $(this).attr("href")
+		});
+		if((opt_play_first && first_track) || (opt_auto_play && !first_track)) {
+			my_jPlayer.jPlayer("play");
+		}
+		first_track = false;
+		$(this).blur();
+		return false;
+	});
+
+});
+//]]>
+</script>
+
+<style>
+<!--
+
+.demo-container {
+	border: 1px solid #009BE3;
+	padding:0 20px;
+	font-family: "Myriad Pro Regular","Trebuchet MS";
+}
+
+.demo-container a, .demo-container a:link, .demo-container a:visited, .demo-container a:hover, .demo-container a:focus, .demo-container a:active {
+	color: #009BE3;
+}
+
+.demo-container ul {
+	list-style-type:none;
+	padding:0;
+	margin:1em 0;
+	width:100%;
+	overflow:hidden;
+}
+
+.demo-container ul span {
+	color: #A0A600;
+}
+
+.demo-container li {
+	float:left;
+	margin-right:1em;
+}
+
+.demo-container p span.track-name {
+	color: #CC0090;
+}
+
+-->
+</style>
+
+</head>
+<body>
+
+
+		<div id="jquery_jplayer"></div>
+
+		<!-- Using the cssSelectorAncestor option with the default cssSelector class names to enable control association of standard functions using built in features -->
+
+		<div id="jp_container" class="demo-container">
+			<ul>
+				<li><span>Select a stations : </span></li>
+				<li><a href="http://247house.fm:9505/autodj" class="track track-default">Tech House</a></li>
+				<li> | </li>
+				<li><a href="https://c32.radioboss.fm:18309/stream" class="track">Iskra FM</a></li>
+				<li> | </li>
+				<li><a href="http://247house.fm:9502/autodj" class="track">Deerty House</a></li>
+				<li> | </li>
+				<li><a href="https://radiorecord.hostingradio.ru/fut96.aacp" class="track">Record Future House</a></li>
+				<li> | </li>
+				<li><a href="http://81.88.36.44:8010/;stream.nsv" class="track track-default">Mega Trance Fm</a></li>
+				<li> | </li>
+				<li><a href="http://194.87.111.252:8000/live" class="track">NU EUPHORIA Trance</a></li>
+				<li> | </li>
+				<li><a href="https://listener3.mp3.tb-group.fm/trb.mp3" class="track">TranceBase.FM</a></li>
+				<li> | </li>
+				<li><a href="https://listener2.mp3.tb-group.fm/tb.mp3" class="track">TechnoBase.FM</a></li>
+				<li> | </li>
+				<li><a href="https://listener2.mp3.tb-group.fm/ht.mp3" class="track track-default">HouseTime.FM</a></li>
+				<li> | </li>
+				<li><a href="https://listener2.mp3.tb-group.fm/hb.mp3" class="track">HardBase.FM</a></li>
+				<li> | </li>
+				<li><a href="https://listener1.mp3.tb-group.fm/ct.mp3" class="track">CoreTime.FM</li>
+				<li> | </li>
+				<li><a href="https://listener3.mp3.tb-group.fm/clt.mp3" class="track">ClubTime.FM</a></li>
+				<li> | </li>
+				<li><a href="https://listener1.mp3.tb-group.fm/tt.mp3" class="track track-default">TeaTime.FM</a></li>
+				<li> | </li>
+				<li><a href="https://listener1.mp3.tb-group.fm/rp.mp3" class="track">Replay.FM</a></li>
+				<li> | </li>
+				<li><a href="http://79.120.39.202:9031/;" class="track">Difm Vocal Trance</a></li>
+				<li> | </li>
+				<li><a href="http://185.33.21.112/aditest" class="track">TortFm Trance</a></li>
+				<li> | </li>
+				
+				<li><a href="http://noisefm.ru:8000/play_256" class="track track-default">NoiseFm</a></li>
+				<li> | </li>
+				<li><a href="https://audio-edge-3mayu.fra.h.radiomast.io/0cef93cd-5974-43b1-868e-c739e81f4f2b" class="track">Japan Hardcore</a></li>
+				<li> | </li>
+				<li><a href="http://109.105.59.27:8000/tcr192" class="track">Trance Century</a></li>
+				<li> | </li>
+				<li><a href="http://185.33.21.112/psytrance_128" class="track">Difm Psytrance</a></li>
+				<li> | </li>
+				<li><a href="http://cast.streams.ovh:8008/stream" class="track track-default">Trance Live</a></li>
+				<li> | </li>
+				<li><a href="http://psy.rupsy.ru:8000/psy" class="track">Ru Psytrance</a></li>
+				<li> | </li>
+				<li><a href="http://psyprog.rupsy.ru:8000/psyprog" class="track">Ru PsyProg</a></li>
+				<li> | </li>
+				<li><a href="https://radio.trance.one:8443/online" class="track">TranceOne</a></li>
+				<li> | </li>
+				
+				<li><a href="https://listen4.myradio24.com/18357" class="track track-default">Lumix FM</a></li>
+				<li> | </li>
+				<li><a href="https://radiorecord.hostingradio.ru/rave96.aacp" class="track">Record RaveFm</a></li>
+				<li> | </li>
+				<li><a href="http://equinox.shoutca.st:8127/stream" class="track">Avivmedia.fm</a></li>
+				<li> | </li>
+				<li><a href="http://81.18.165.236/;" class="track">Difm Gabber</a></li>
+				<li> | </li>
+				<li><a href="http://79.120.39.202:8002/dubtechno" class="track track-default">Dub Techno</a></li>
+				<li> | </li>
+				<li><a href="http://181fm-edge1.cdnstream.com/181-technoclub_128k.mp3" class="track">181 Techno Club</a></li>
+				<li> | </li>
+				<li><a href="http://144.76.106.52:7000/electronic.mp3" class="track">Emotion Splash Psyhodelic</a></li>
+				<li> | </li>
+				
+			</ul>
+			
+			<p>
+				<span class="play-state"></span> :
+				<span class="track-name">nothing</span>
+				- playback time:
+				<span class="jp-current-time"></span>
+			</p>
+			<ul>
+				<li><a class="jp-play" href="#">Play</a></li>
+				<li><a class="jp-pause" href="#">Pause</a></li>
+				<li><a class="jp-stop" href="#">Stop</a></li>
+			</ul>
+			<ul>
+				<li>volume :</li>
+				<li><a class="jp-mute" href="#">Mute</a></li>
+				<li><a class="jp-unmute" href="#">Unmute</a></li>
+				<li> <a class="jp-volume-bar" href="#">|&lt;----------&gt;|</a></li>
+				<li><a class="jp-volume-max" href="#">Max</a></li>
+			</ul>
+		</div>
+		
+		<div id="jquery_jplayer"></div>
+
+		<!-- Using the cssSelectorAncestor option with the default cssSelector class names to enable control association of standard functions using built in features -->
+
+		<div id="jp_container" class="demo-container">
+			<ul>
+				<li><span>Select a stations : </span></li>
+				<li><a href="https://radiorecord.hostingradio.ru/tm96.aacp?1=1" class="track track-default">Trancemission</a></li>
+				<li> | </li>
+				<li><a href="https://pub0101.101.ru:8000/stream/pro/aac/64/151" class="track">Rave Station</a></li>
+				<li> | </li>
+				<li><a href="https://sunshinelive.hoerradar.de/sunshinelive-mayday-mp3-hq" class="track">Mayday</a></li>
+				<li> | </li>
+				<li><a href="https://listener2.mp3.tb-group.fm/ct.mp3" class="track">CorTime</a></li>
+				<li> | </li>
+				<li><a href="http://138.201.33.223/harder" class="track track-default">Music Hard</a></li>
+				<li> | </li>
+				<li><a href="http://rautemusik-de-hz-fal-stream14.radiohost.de/club?" class="track">Music Club</a></li>
+				<li> | </li>
+				<li><a href="https://revolutionradio.ru:8443/live.mp3" class="track">Revolution.Fm</a></li>
+				<li> | </li>
+				<li><a href="http://schranz.in:8000/;" class="track">Schranz</a></li>
+				<li> | </li>
+				<li><a href="http://stream.161.fm:8000/192" class="track track-default">161 FM</a></li>
+				<li> | </li>
+				<li><a href="http://ice1.somafm.com/spacestation-128-mp3" class="track">SomaFM Spacestation</a></li>
+				<li> | </li>
+				<li><a href="https://radiorecord.hostingradio.ru/gold96.aacp" class="track">Record Gold</li>
+				<li> | </li>
+				<li><a href="https://radiorecord.hostingradio.ru/synth96.aacp" class="track">Synth Wave</a></li>
+				<li> | </li>
+				<li><a href="http://radio.anothermusicproject.com:8000/idm" class="track track-default">IDM</a></li>
+				<li> | </li>
+				<li><a href="http://i-radio.info:8090/stream" class="track">John Radio</a></li>
+				<li> | </li>
+				<li><a href="http://streamer.psyradio.org:8030/;" class="track">Psy Radio</a></li>
+				<li> | </li>
+				<li><a href="https://lk.castnow.ru:8100/edm-320.mp3" class="track">Electronic Dance Music</a></li>
+				<li> | </li>
+				
+				<li><a href="http://sound.dzhon.top:8000/radio.mp3" class="track track-default">DEEP IN SPACE</a></li>
+				<li> | </li>
+				<li><a href="http://streamingp.shoutcast.com/JamendoLounge" class="track">BlackRace</a></li>
+				<li> | </li>
+				<li><a href="http://217.74.72.10:8000/rmf_depeche_mode" class="track">RMF Depeche Mode</a></li>
+				<li> | </li>
+				<li><a href="http://stream.rpgamers.net:8000/rpgn" class="track">Music Games</a></li>
+				<li> | </li>
+				<li><a href="http://79.120.39.202:8002/retrowave" class="track track-default">Retro Wave</a></li>
+				<li> | </li>
+				<li><a href="http://79.111.119.111:8002/indieelectronic" class="track">Indi Electronic</a></li>
+				<li> | </li>
+				<li><a href="https://cafe-content.amartynov.ru/ice" class="track">Maximum Fm Cafe</a></li>
+				<li> | </li>
+				<li><a href="http://sunsl.streamabc.net/sunsl-amsterdam-mp3-192-9011779" class="track">Bunker Fm</a></li>
+				<li> | </li>
+				
+				<li><a href="http://radio.musicinparadise.ru:8000/musicinparadise" class="track track-default">Music In Paradise</a></li>
+				<li> | </li>
+				<li><a href="http://79.111.119.111:8002/breakcore" class="track">BreakCore</a></li>
+				<li> | </li>
+				<li><a href="https://sunsl.streamabc.net/sunsl-playlist1-mp3-192-2595213" class="track">Club Classics</a></li>
+				<li> | </li>
+				<li><a href="http://stream.dubstep.fm/;stream/DUBSTEP.FM" class="track">NeedFm Dubstep</a></li>
+				<li> | </li>
+				<li><a href="http://213.141.131.10:8002/edmtrap" class="track track-default">EDM Trap</a></li>
+				<li> | </li>
+				<li><a href="http://51.89.79.220:8056/br_128" class="track">Beat Records Dance</a></li>
+				<li> | </li>
+				<li><a href="https://streams.radio.co/sdc9cfaf77/listen" class="track">Ibiza Online</a></li>
+				<li> | </li>
+				
+			</ul>
+			
+			<p>
+				<span class="play-state"></span> :
+				<span class="track-name">nothing</span>
+				- playback time:
+				<span class="jp-current-time"></span>
+			</p>
+			<ul>
+				<li><a class="jp-play" href="#">Play</a></li>
+				<li><a class="jp-pause" href="#">Pause</a></li>
+				<li><a class="jp-stop" href="#">Stop</a></li>
+			</ul>
+			<ul>
+				<li>volume :</li>
+				<li><a class="jp-mute" href="#">Mute</a></li>
+				<li><a class="jp-unmute" href="#">Unmute</a></li>
+				<li> <a class="jp-volume-bar" href="#">|&lt;----------&gt;|</a></li>
+				<li><a class="jp-volume-max" href="#">Max</a></li>
+			</ul>
+		</div>
+		<br>
+<style>
+   .btn {
+    display: inline-block; /* Строчно-блочный элемент */
+    background: #8C959D; /* Серый цвет фона */
+    color: #fff; /* Белый цвет текста */
+    padding: 0.5rem 0.5rem; /* Поля вокруг текста */
+    text-decoration: none; /* Убираем подчёркивание */
+    border-radius: 50px; /* Скругляем уголки */
+   }
+  </style>
+
+ <body> 
+  <a href="index.html" target="_blank" class="btn">Previous</a>
+  <a href="online-music-radio-stations-1.html" target="_blank" class="btn">Next</a>
+			
+		</div>
+</body>
+
+</html>

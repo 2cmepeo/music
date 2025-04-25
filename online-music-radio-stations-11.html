@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+<title>Музыка радиостанции spinner слушать бесплатно все каналы онлайн | audiobase.ru</title>
+    <meta name="description" content="Самый большой каталог онлайн радио. Слушать бесплатно музыкальные радиостанции в отличном качестве. Легкий сайт для кнопочных телефонов и для быстрой загрузки с плохим качеством интернет | audiobase.ru">
+    <meta name="keywords" content="слушать, бесплатно, онлайн, музыка, все каналы, радио, spinnner, станции, на мобильном, низкая скорость, соединение, онлайн радио, для кнопочного, телефона, плохая связь,">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="./jquery.min.js"></script>
+<script type="text/javascript" src="./jquery.jplayer.min.js"></script>
+<script type="text/javascript">
+
+//<![CDATA[
+
+$(document).ready(function(){
+
+	// Local copy of jQuery selectors, for performance.
+	var	my_jPlayer = $("#jquery_jplayer"),
+		my_trackName = $("#jp_container .track-name"),
+		my_playState = $("#jp_container .play-state"),
+		my_extraPlayInfo = $("#jp_container .extra-play-info");
+
+	// Some options
+	var	opt_play_first = false, // If true, will attempt to auto-play the default track on page loads. No effect on mobile devices, like iOS.
+		opt_auto_play = true, // If true, when a track is selected, it will auto-play.
+		opt_text_playing = "Now playing", // Text when playing
+		opt_text_selected = "Track selected"; // Text when not playing
+
+	// A flag to capture the first track
+	var first_track = true;
+
+	// Change the time format
+	$.jPlayer.timeFormat.padMin = false;
+	$.jPlayer.timeFormat.padSec = false;
+	$.jPlayer.timeFormat.sepMin = " min ";
+	$.jPlayer.timeFormat.sepSec = " sec";
+
+	// Initialize the play state text
+	my_playState.text(opt_text_selected);
+
+	// Instance jPlayer
+	my_jPlayer.jPlayer({
+		ready: function () {
+			$("#jp_container .track-default").click();
+		},
+		timeupdate: function(event) {
+			my_extraPlayInfo.text(parseInt(event.jPlayer.status.currentPercentAbsolute, 10) + "%");
+		},
+		play: function(event) {
+			my_playState.text(opt_text_playing);
+		},
+		pause: function(event) {
+			my_playState.text(opt_text_selected);
+		},
+		ended: function(event) {
+			my_playState.text(opt_text_selected);
+		},
+		swfPath: "../../dist/jplayer",
+		cssSelectorAncestor: "#jp_container",
+		supplied: "mp3",
+		wmode: "window"
+	});
+
+	// Create click handlers for the different tracks
+	$("#jp_container .track").click(function(e) {
+		my_trackName.text($(this).text());
+		my_jPlayer.jPlayer("setMedia", {
+			mp3: $(this).attr("href")
+		});
+		if((opt_play_first && first_track) || (opt_auto_play && !first_track)) {
+			my_jPlayer.jPlayer("play");
+		}
+		first_track = false;
+		$(this).blur();
+		return false;
+	});
+
+});
+//]]>
+</script>
+
+<style>
+<!--
+
+.demo-container {
+	border: 1px solid #009BE3;
+	padding:0 20px;
+	font-family: "Myriad Pro Regular","Trebuchet MS";
+}
+
+.demo-container a, .demo-container a:link, .demo-container a:visited, .demo-container a:hover, .demo-container a:focus, .demo-container a:active {
+	color: #009BE3;
+}
+
+.demo-container ul {
+	list-style-type:none;
+	padding:0;
+	margin:1em 0;
+	width:100%;
+	overflow:hidden;
+}
+
+.demo-container ul span {
+	color: #A0A600;
+}
+
+.demo-container li {
+	float:left;
+	margin-right:1em;
+}
+
+.demo-container p span.track-name {
+	color: #CC0090;
+}
+
+-->
+</style>
+
+</head>
+<body>
+
+
+		<div id="jquery_jplayer"></div>
+
+		<!-- Using the cssSelectorAncestor option with the default cssSelector class names to enable control association of standard functions using built in features -->
+
+		<div id="jp_container" class="demo-container">
+			<ul>
+				<li><span>Select a stations : </span></li>
+				<li><a href="https://live.radiospinner.com/ndchll-64" class="track track-default">Radio Spinner - Indie Chill</a></li>
+				<li> | </li>
+				<li><a href="https://live.radiospinner.com/ndppht-64" class="track">Radio Spinner - Indie Pop
+Hit</a></li>
+				<li> | </li>
+				<li><a href="https://live.radiospinner.com/chill-hop-64" class="track">Radio Spinner - Chillhop </a></li>
+				<li> | </li>
+				<li><a href="https://live.radiospinner.com/jazz-house-64" class="track">Radio Spinner - Jazz
+House</a></li>
+				<li> | </li>
+				<li><a href="https://live.radiospinner.com/ltnpphts-64" class="track track-default">Radio Spinner - Latin Pop
+Hits</a></li>
+				<li> | </li>
+				<li><a href="https://live.radiospinner.com/lfch-64" class="track">Radio Spinner - Lofi Chil</a></li>
+				<li> | </li>
+				<li><a href="https://live.radiospinner.com/lofi-hip-hop-64" class="track">Radio Spinner - Lofi Hiphop</a></li>
+				<li> | </li>
+				<li><a href="https://live.radiospinner.com/lounge-64" class="track">Radio Spinner - Lounge</a></li>
+				<li> | </li>
+				<li><a href="https://live.radiospinner.com/love-jazz-64" class="track track-default">Radio Spinner - Love Jazz</a></li>
+				<li> | </li>
+				<li><a href="https://live.radiospinner.com/mellow-jazz-64" class="track">Radio Spinner - Mellow
+Jazz</a></li>
+				<li> | </li>
+				<li><a href="https://live.radiospinner.com/minimal-techno-64" class="track">Radio Spinner - Minimal
+Techno</li>
+				<li> | </li>
+				<li><a href="https://live.radiospinner.com/modern-vocal-jazz-64" class="track">Radio Spinner - Modern
+Vocal Jazz</a></li>
+				<li> | </li>	
+				<li><a href="https://live.radiospinner.com/nature-64" class="track">Radio Spinner - Nature</a></li>
+				<li> | </li>
+<li><a href="https://live.radiospinner.com/nclssclwv-64" class="track">Radio Spinner - Neoclassical Wave</a></li>
+				<li> | </li>
+				<li><a href="https://live.radiospinner.com/nwagewv-64" class="track">Radio Spinner - New Age
+Wave</a></li>
+				<li> | </li>
+				<li><a href="https://live.radiospinner.com/night-jazz-64" class="track">Radio Spinner - Night Jazz</a></li>
+				<li> | </li>
+				<li><a href="https://live.radiospinner.com/nghtcrbts-64" class="track">Radio Spinner - Nightcore
+Beats</a></li>
+				<li> | </li>
+				<li><a href="https://live.radiospinner.com/nu-disco-64" class="track">Radio Spinner - Nu Disco</a></li>
+				<li> | </li>
+				
+			</ul>
+			
+			<p>
+				<span class="play-state"></span> :
+				<span class="track-name">nothing</span>
+				- playback time:
+				<span class="jp-current-time"></span>
+			</p>
+			<ul>
+				<li><a class="jp-play" href="#">Play</a></li>
+				<li><a class="jp-pause" href="#">Pause</a></li>
+				<li><a class="jp-stop" href="#">Stop</a></li>
+			</ul>
+			<ul>
+				<li>volume :</li>
+				<li><a class="jp-mute" href="#">Mute</a></li>
+				<li><a class="jp-unmute" href="#">Unmute</a></li>
+				<li> <a class="jp-volume-bar" href="#">|&lt;----------&gt;|</a></li>
+				<li><a class="jp-volume-max" href="#">Max</a></li>
+			</ul>
+		</div>
+		<br>
+		<style>
+   .btn {
+    display: inline-block; /* Строчно-блочный элемент */
+    background: #8C959D; /* Серый цвет фона */
+    color: #fff; /* Белый цвет текста */
+    padding: 0.5rem 0.5rem; /* Поля вокруг текста */
+    text-decoration: none; /* Убираем подчёркивание */
+    border-radius: 50px; /* Скругляем уголки */
+   }
+  </style>
+
+ <body> 
+  <a href="online-music-radio-stations-10.html" target="_blank" class="btn">Previous</a>
+  <a href="online-music-radio-stations-12.html" target="_blank" class="btn">Next</a>
+			
+		</div>
+
+</body>
+
+</html>

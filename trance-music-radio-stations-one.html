@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+<title>Trance music radio stations</title>
+    <meta name="description" content="Listen to Trance music in excellent quality on any device. Big catalog online radio stations. Best music radio. Electronic music">
+    <meta name="keywords" content="trance, excellent quality, on any device, best audio, catalog, online, radio stations, mp3, music, listen, techno, trance, deep, house, hardcore, retro, discography, new hits,">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="./jquery.min.js"></script>
+<script type="text/javascript" src="./jquery.jplayer.min.js"></script>
+<script type="text/javascript">
+
+//<![CDATA[
+
+$(document).ready(function(){
+
+	// Local copy of jQuery selectors, for performance.
+	var	my_jPlayer = $("#jquery_jplayer"),
+		my_trackName = $("#jp_container .track-name"),
+		my_playState = $("#jp_container .play-state"),
+		my_extraPlayInfo = $("#jp_container .extra-play-info");
+
+	// Some options
+	var	opt_play_first = false, // If true, will attempt to auto-play the default track on page loads. No effect on mobile devices, like iOS.
+		opt_auto_play = true, // If true, when a track is selected, it will auto-play.
+		opt_text_playing = "Now playing", // Text when playing
+		opt_text_selected = "Track selected"; // Text when not playing
+
+	// A flag to capture the first track
+	var first_track = true;
+
+	// Change the time format
+	$.jPlayer.timeFormat.padMin = false;
+	$.jPlayer.timeFormat.padSec = false;
+	$.jPlayer.timeFormat.sepMin = " min ";
+	$.jPlayer.timeFormat.sepSec = " sec";
+
+	// Initialize the play state text
+	my_playState.text(opt_text_selected);
+
+	// Instance jPlayer
+	my_jPlayer.jPlayer({
+		ready: function () {
+			$("#jp_container .track-default").click();
+		},
+		timeupdate: function(event) {
+			my_extraPlayInfo.text(parseInt(event.jPlayer.status.currentPercentAbsolute, 10) + "%");
+		},
+		play: function(event) {
+			my_playState.text(opt_text_playing);
+		},
+		pause: function(event) {
+			my_playState.text(opt_text_selected);
+		},
+		ended: function(event) {
+			my_playState.text(opt_text_selected);
+		},
+		swfPath: "../../dist/jplayer",
+		cssSelectorAncestor: "#jp_container",
+		supplied: "mp3",
+		wmode: "window"
+	});
+
+	// Create click handlers for the different tracks
+	$("#jp_container .track").click(function(e) {
+		my_trackName.text($(this).text());
+		my_jPlayer.jPlayer("setMedia", {
+			mp3: $(this).attr("href")
+		});
+		if((opt_play_first && first_track) || (opt_auto_play && !first_track)) {
+			my_jPlayer.jPlayer("play");
+		}
+		first_track = false;
+		$(this).blur();
+		return false;
+	});
+
+});
+//]]>
+</script>
+
+<style>
+<!--
+
+.demo-container {
+	border: 1px solid #009BE3;
+	padding:0 20px;
+	font-family: "Myriad Pro Regular","Trebuchet MS";
+}
+
+.demo-container a, .demo-container a:link, .demo-container a:visited, .demo-container a:hover, .demo-container a:focus, .demo-container a:active {
+	color: #009BE3;
+}
+
+.demo-container ul {
+	list-style-type:none;
+	padding:0;
+	margin:1em 0;
+	width:100%;
+	overflow:hidden;
+}
+
+.demo-container ul span {
+	color: #A0A600;
+}
+
+.demo-container li {
+	float:left;
+	margin-right:1em;
+}
+
+.demo-container p span.track-name {
+	color: #CC0090;
+}
+
+-->
+</style>
+
+<style>
+div.scrollmenu {
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.scrollmenu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+    background-color: #777;
+}
+</style>
+ </head>
+	 
+	<body>
+
+<div class="scrollmenu">
+  <a href="index.html">Home</a>
+  <a href="trance-music-radio-stations.html">Trance</a>
+  <a href="techno-music-radio-stations.html">Techno</a>
+  <a href="hardstyle-music-radio-stations.html">Hardstyle</a>
+  <a href="retro-music-radio-stations.html">Retro</a>
+  <a href="house-music-radio-stations.html">House</a>
+  <a href="club-music-radio-stations.html">Club</a>  
+  <a href="dance-music-radio-stations.html">Dance</a>
+  <a href="synth-music-radio-stations.html">Synth</a>
+  <a href="electro-music-radio-stations.html">Electro</a>
+  <a href="eurodance-music-radio-stations.html">Eurodance</a>
+  <a href="alternative-music-radio-stations.html">Alternative</a>
+  <a href="progressive-music-radio-stations.html">Progressive</a>
+  <a href="underground-music-radio-stations.html">Underground</a>
+  <a href="trance-music-radio-stations-two.html">Next</a>
+</div>
+<h1>Trance слушать бесплатно онлайн</h1>
+<h3>Самый большой каталог Trance радиостанций.</h3> 
+<h4>
+Trance Music часть 2 <a href="http://audiobase.ru" target="_blank" class="btn">audiobase.ru</a> Каталог радиостанций вещающих музыку в стиле транс.</h4>	
+
+		<div id="jquery_jplayer"></div>
+
+		<!-- Using the cssSelectorAncestor option with the default cssSelector class names to enable control association of standard functions using built in features -->
+
+		<div id="jp_container" class="demo-container">
+			<ul>
+				<li><span>Выбрать канал : </span></li>
+				<li><a href="http://dieklangwelt.stream.laut.fm/dieklangwelt" class="track track-default">dieklangwelt</a></li>
+				<li> | </li>
+				<li><a href="http://chart-tipps.stream.laut.fm/chart-tipps" class="track">chart tipps</a></li>
+				<li> | </li>
+				<li><a href="http://comeon.stream.laut.fm/comeon" class="track">comeon</a></li>
+				<li> | </li>
+				<li><a href="http://dancefloor-vibes.stream.laut.fm/dancefloor-vibes" class="track">dancefloor vibes</a></li>
+				<li> | </li>
+				<li><a href="http://happyfeelings.stream.laut.fm/happyfeelings" class="track">happyfeelings</a></li>
+				<li> | </li>
+				<li><a href="http://hitsforever.stream.laut.fm/hitsforever" class="track">hitsforever</a></li>
+				<li> | </li>
+				<li><a href="http://dancemixradio.stream.laut.fm/dancemixradio" class="track">dancemixradio</a></li>
+				<li> | </li>
+				<li><a href="http://clubhits.stream.laut.fm/clubhits" class="track">clubhits</a></li>
+				<li> | </li>
+				<li><a href="http://partystation.stream.laut.fm/partystation" class="track">partystation</a></li>
+				<li> | </li>
+				<li><a href="http://hochrhein-radio.stream.laut.fm/hochrhein-radio" class="track">hochrhein radio</a></li>
+				<li> | </li>
+				<li><a href="http://davidtresher.stream.laut.fm/davidtresher" class="track">davidtresher</a></li>
+				<li> | </li>
+				<li><a href="http://fantasyradio.stream.laut.fm/fantasyradio" class="track">fantasyradio</li>
+				<li> | </li>
+				<li><a href="http://cluboneliveradio.stream.laut.fm/cluboneliveradio" class="track">cluboneliveradio</a></li>
+				<li> | </li>
+				<li><a href="http://loveradiode.stream.laut.fm/loveradiode" class="track">loveradiode</a></li>
+				<li> | </li>
+				<li><a href="http://homebase.stream.laut.fm/homebase" class="track">homebase</a></li>
+				<li> | </li>
+				<li><a href="http://nonstop_club.stream.laut.fm/nonstop_club" class="track">nonstop club</a></li>
+				<li> | </li>
+				<li><a href="http://electricfabric.stream.laut.fm/electricfabric" class="track">electricfabric</a></li>
+				<li> | </li>
+				
+				<li><a href="http://stg_fm.stream.laut.fm/stg_fm" class="track">stg fm</a></li>
+				<li> | </li>
+				<li><a href="http://radio-nrg.stream.laut.fm/radio-nrg" class="track">radio nrg</a></li>
+				<li> | </li>
+				<li><a href="http://dance.stream.laut.fm/dance" class="track">dance</a></li>
+				<li> | </li>
+				<li><a href="http://webradio1.stream.laut.fm/webradio1" class="track">webradio1</a></li>
+				<li> | </li>
+				<li><a href="http://elektrobude.stream.laut.fm/elektrobude" class="track">elektrobude</a></li>
+				<li> | </li>
+				<li><a href="http://electrofreaks.stream.laut.fm/electrofreaks" class="track">electrofreaks</a></li>
+				<li> | </li>
+				<li><a href="http://dance-family-radio.stream.laut.fm/dance-family-radio" class="track">dance family radio</a></li>
+				<li> | </li>
+				<li><a href="http://revolution-of-sounds.stream.laut.fm/revolution-of-sounds" class="track">revolution of sounds</a></li>
+				<li> | </li>
+				
+				<li><a href="http://djdataharry.stream.laut.fm/djdataharry" class="track">djdataharry</a></li>
+				<li> | </li>
+				<li><a href="http://schranz.stream.laut.fm/schranz" class="track">schranz</a></li>
+				<li> | </li>
+				<li><a href="http://club-sensation.stream.laut.fm/club-sensation" class="track">club sensation</a></li>
+				<li> | </li>
+				<li><a href="http://electraradio.stream.laut.fm/electraradio" class="track">electraradio</a></li>
+				<li> | </li>
+				<li><a href="http://bassnurbass.stream.laut.fm/bassnurbass" class="track">bassnurbass</a></li>
+				<li> | </li>
+				<li><a href="http://mshit-radio.stream.laut.fm/mshit-radio" class="track">mshit radio</a></li>
+				<li> | </li>
+				<li><a href="http://soundfabrik_90to2k.stream.laut.fm/soundfabrik_90to2k" class="track">soundfabrik 90to2</a></li>
+				<li> | </li>
+				
+			</ul>
+			
+			<p>
+				<span class="play-state"></span> :
+				<span class="track-name">nothing</span>
+				- время воспроизведения:
+				<span class="jp-current-time"></span>
+			</p>
+			<ul>
+				<li><a class="jp-play" href="#">Play</a></li>
+				<li><a class="jp-pause" href="#">Pause</a></li>
+				<li><a class="jp-stop" href="#">Stop</a></li>
+			</ul>
+			<ul>
+				<li>volume :</li>
+				<li><a class="jp-mute" href="#">Mute</a></li>
+				<li><a class="jp-unmute" href="#">Unmute</a></li>
+				<li> 
+				<a class="jp-volume-bar" href="#">|&lt;----------&gt;|</a></li>
+				<li><a class="jp-volume-max" href="#">Max</a></li>
+			</ul>
+		</div>
+		
+		<div id="jquery_jplayer"></div>
+
+		<!-- Using the cssSelectorAncestor option with the default cssSelector class names to enable control association of standard functions using built in features -->
+
+		<div id="jp_container" class="demo-container">
+			<ul>
+				<li><span>Select a stations : </span></li>
+				<li><a href="http://dorf.stream.laut.fm/dorf" class="track">dorf</a></li>
+				<li> | </li>
+				<li><a href="http://radio-auerhahn.stream.laut.fm/radio-auerhahn" class="track">radio auerhahn</a></li>
+				<li> | </li>
+				<li><a href="http://beatz_of_electronic.stream.laut.fm/beatz_of_electronic" class="track">beatz of electronic</a></li>
+				<li> | </li>
+				<li><a href="http://skyradiofm-clubhits.stream.laut.fm/skyradiofm-clubhits" class="track">skyradiofm clubhits</a></li>
+				<li> | </li>
+				<li><a href="http://summerlove-radio.stream.laut.fm/summerlove-radio" class="track">summerlove radio</a></li>
+				<li> | </li>
+				<li><a href="http://hotradio.stream.laut.fm/hotradio" class="track">hotradio</a></li>
+				<li> | </li>
+				<li><a href="http://anty.stream.laut.fm/anty" class="track">anty</a></li>
+				<li> | </li>
+				<li><a href="http://ruby.stream.laut.fm/ruby" class="track">ruby</a></li>
+				<li> | </li>
+				<li><a href="http://lazerradio.stream.laut.fm/lazerradio" class="track">lazerradio</a></li>
+				<li> | </li>
+				<li><a href="http://sounemot-radio-fm.stream.laut.fm/sounemot-radio-fm" class="track">sounemot radio fm</a></li>
+				<li> | </li>
+				<li><a href="http://radioalexfmoberpfalz.stream.laut.fm/radioalexfmoberpfalz" class="track">radioalexfmoberpfalz</li>
+				<li> | </li>
+				<li><a href="http://retroelectronicmusic.stream.laut.fm/retroelectronicmusic" class="track">retroelectronicmusic</a></li>
+				<li> | </li>
+				<li><a href="http://gtlive.stream.laut.fm/gtlive" class="track">gtlive</a></li>
+				<li> | </li>
+				<li><a href="http://handsup.stream.laut.fm/handsup" class="track">handsup</a></li>
+				<li> | </li>
+				<li><a href="http://cmn.stream.laut.fm/cmn" class="track">cmn</a></li>
+				<li> | </li>
+				<li><a href="http://electrotechno.stream.laut.fm/electrotechno" class="track">electrotechno</a></li>
+				<li> | </li>
+				
+				<li><a href="http://teddyradio.stream.laut.fm/teddyradio" class="track">teddyradio</a></li>
+				<li> | </li>
+				<li><a href="http://clubdate.stream.laut.fm/clubdate" class="track">clubdate</a></li>
+				<li> | </li>
+				<li><a href="http://radio-steammachine.stream.laut.fm/radio-steammachine" class="track">radio steammachine</a></li>
+				<li> | </li>
+				<li><a href="http://hausradio.stream.laut.fm/hausradio" class="track">hausradio</a></li>
+				<li> | </li>
+				<li><a href="http://radio-maxxit.stream.laut.fm/radio-maxxit" class="track">radio maxxit</a></li>
+				<li> | </li>
+				<li><a href="http://nandomania.stream.laut.fm/nandomania" class="track">nandomania</a></li>
+				<li> | </li>
+				<li><a href="http://freshmusic.stream.laut.fm/freshmusic" class="track">freshmusic</a></li>
+				<li> | </li>
+				<li><a href="http://m-base.stream.laut.fm/m-base" class="track">m base</a></li>
+				<li> | </li>
+				
+				<li><a href="http://treibhouseeffekt.stream.laut.fm/treibhouseeffekt" class="track">treibhouseeffekt</a></li>
+				<li> | </li>
+				<li><a href="http://radio-arachne.stream.laut.fm/radio-arachne" class="track">radio arachne</a></li>
+				<li> | </li>
+				<li><a href="http://techtronic.stream.laut.fm/techtronic" class="track">techtronic</a></li>
+				<li> | </li>
+				<li><a href="http://skyradiofm.stream.laut.fm/skyradiofm" class="track">skyradiofm</a></li>
+				<li> | </li>
+				<li><a href="http://radioalexfmmike37.stream.laut.fm/radioalexfmmike37" class="track">radioalexfmmike37</a></li>
+				<li> | </li>
+				<li><a href="http://rdf-main.stream.laut.fm/rdf-main" class="track">rdf main</a></li>
+				<li> | </li>
+				<li><a href="http://frosch-radio.stream.laut.fm/frosch-radio" class="track">frosch radio</a></li>
+				<li> | </li>
+				
+			</ul>
+			
+			<p>
+				<span class="play-state"></span> :
+				<span class="track-name">nothing</span>
+				- playback time:
+				<span class="jp-current-time"></span>
+			</p>
+			<ul>
+				<li><a class="jp-play" href="#">Play</a></li>
+				<li><a class="jp-pause" href="#">Pause</a></li>
+				<li><a class="jp-stop" href="#">Stop</a></li>
+			</ul>
+			<ul>
+				<li>volume :</li>
+				<li><a class="jp-mute" href="#">Mute</a></li>
+				<li><a class="jp-unmute" href="#">Unmute</a></li>
+				<li> <a class="jp-volume-bar" href="#">|&lt;----------&gt;|</a></li>
+				<li><a class="jp-volume-max" href="#">Max</a></li>
+			</ul>
+		</div>
+		<br>
+<style>
+   .btn {
+    display: inline-block; /* Строчно-блочный элемент */
+    background: #8C959D; /* Серый цвет фона */
+    color: #fff; /* Белый цвет текста */
+    padding: 0.5rem 0.5rem; /* Поля вокруг текста */
+    text-decoration: none; /* Убираем подчёркивание */
+    border-radius: 50px; /* Скругляем уголки */
+   }
+  </style>
+
+ <body> 
+  
+  <a href="online-music-radio-stations-two.html" target="_blank" class="btn">Next</a>
+			
+		</div>
+</body>
+
+</html>

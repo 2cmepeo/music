@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+<title>Радио рекорд слушать бесплатно онлайн | audiobase.ru</title>
+    <meta name="description" content="Слушать бесплатно рекорд все станции в отличном качестве. Легкий сайт для кнопочных телефонов и для быстрой загрузки с плохим качеством интернет. Самый большой каталог онлайн радиостанций на сайте audiobase.ru">
+    <meta name="keywords" content="слушать, бесплатно, онлайн, музыка, все каналы, радио, станции, на мобильном, низкая скорость, быстрая загрузка, вещание, соединения, онлайн радио, для кнопочного, телефона,">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="./jquery.min.js"></script>
+<script type="text/javascript" src="./jquery.jplayer.min.js"></script>
+<script type="text/javascript">
+
+//<![CDATA[
+
+$(document).ready(function(){
+
+	// Local copy of jQuery selectors, for performance.
+	var	my_jPlayer = $("#jquery_jplayer"),
+		my_trackName = $("#jp_container .track-name"),
+		my_playState = $("#jp_container .play-state"),
+		my_extraPlayInfo = $("#jp_container .extra-play-info");
+
+	// Some options
+	var	opt_play_first = false, // If true, will attempt to auto-play the default track on page loads. No effect on mobile devices, like iOS.
+		opt_auto_play = true, // If true, when a track is selected, it will auto-play.
+		opt_text_playing = "Now playing", // Text when playing
+		opt_text_selected = "Track selected"; // Text when not playing
+
+	// A flag to capture the first track
+	var first_track = true;
+
+	// Change the time format
+	$.jPlayer.timeFormat.padMin = false;
+	$.jPlayer.timeFormat.padSec = false;
+	$.jPlayer.timeFormat.sepMin = " min ";
+	$.jPlayer.timeFormat.sepSec = " sec";
+
+	// Initialize the play state text
+	my_playState.text(opt_text_selected);
+
+	// Instance jPlayer
+	my_jPlayer.jPlayer({
+		ready: function () {
+			$("#jp_container .track-default").click();
+		},
+		timeupdate: function(event) {
+			my_extraPlayInfo.text(parseInt(event.jPlayer.status.currentPercentAbsolute, 10) + "%");
+		},
+		play: function(event) {
+			my_playState.text(opt_text_playing);
+		},
+		pause: function(event) {
+			my_playState.text(opt_text_selected);
+		},
+		ended: function(event) {
+			my_playState.text(opt_text_selected);
+		},
+		swfPath: "../../dist/jplayer",
+		cssSelectorAncestor: "#jp_container",
+		supplied: "mp3",
+		wmode: "window"
+	});
+
+	// Create click handlers for the different tracks
+	$("#jp_container .track").click(function(e) {
+		my_trackName.text($(this).text());
+		my_jPlayer.jPlayer("setMedia", {
+			mp3: $(this).attr("href")
+		});
+		if((opt_play_first && first_track) || (opt_auto_play && !first_track)) {
+			my_jPlayer.jPlayer("play");
+		}
+		first_track = false;
+		$(this).blur();
+		return false;
+	});
+
+});
+//]]>
+</script>
+
+<style>
+<!--
+
+.demo-container {
+	border: 1px solid #009BE3;
+	padding:0 20px;
+	font-family: "Myriad Pro Regular","Trebuchet MS";
+}
+
+.demo-container a, .demo-container a:link, .demo-container a:visited, .demo-container a:hover, .demo-container a:focus, .demo-container a:active {
+	color: #009BE3;
+}
+
+.demo-container ul {
+	list-style-type:none;
+	padding:0;
+	margin:1em 0;
+	width:100%;
+	overflow:hidden;
+}
+
+.demo-container ul span {
+	color: #A0A600;
+}
+
+.demo-container li {
+	float:left;
+	margin-right:1em;
+}
+
+.demo-container p span.track-name {
+	color: #CC0090;
+}
+
+-->
+</style>
+
+</head>
+<body>
+
+
+		<div id="jquery_jplayer"></div>
+
+		<!-- Using the cssSelectorAncestor option with the default cssSelector class names to enable control association of standard functions using built in features -->
+
+		<div id="jp_container" class="demo-container">
+			<ul>
+				<li><span>Select a stations : </span></li>
+				<li><a href="http://radiorecord.hostingradio.ru/party96.aacp" class="track track-default">Radio Record-Party 24/7</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/phonk96.aacp" class="track">Radio Record-Phonk</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/ps96.aacp" class="track">Radio Record-Pirate
+Station</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/progr96.aacp" class="track">Radio Record-Progressive</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/rapclassics96.aacp" class="track track-default">Radio Record-Rap Classics</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/rap96.aacp" class="track">Radio Record-Rap Hits</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/rave96.aacp" class="track">Radio Record-Rave FM</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/reggae96.aacp" class="track">Radio Record-Reggae</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/rmx96.aacp" class="track track-default">Radio Record-Remix</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/rock96.aacp" class="track">Radio Record-Rock</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/russiangold96.aacp" class="track">Radio Record-Russian Gold</li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/russianhits96.aacp" class="track">Radio Record-Russian Hits</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/rus96.aacp" class="track track-default">Radio Record-Russian Mix</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/summerparty96.aacp" class="track">Radio Record-Summer
+Dance</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/summerlounge96.aacp" class="track">Radio Record-Summer
+Lounge</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/synth96.aacp" class="track">Radio Record-Synthwave</a></li>
+				<li> | </li>
+			<li><a href="http://radiorecord.hostingradio.ru/techouse96.aacp" class="track track-default">Radio Record-Tech House</a></li>
+				<li> | </li>
+		<li><a href="http://radiorecord.hostingradio.ru/techno96.aacp" class="track track-default">Radio Record-Techno</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/technopop96.aacp" class="track track-default">Radio Record-Technopop</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/tecktonik96.aacp" class="track track-default">Radio Record-Tecktonik</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/top100edm96.aacp" class="track track-default">Radio Record-Top 100
+Edm</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/trancehits96.aacp" class="track track-default">Radio Record-Trance
+Classics</a></li>
+				<li> | </li>
+		<li><a href="http://radiorecord.hostingradio.ru/trancehouse96.aacp" class="track track-default">Radio Record-Trancehouse</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/tm96.aacp" class="track track-default">Radio Record-
+Trancemission</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/trap96.aacp" class="track track-default">Radio Record-Trap</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/trop96.aacp" class="track track-default">Radio Record-Tropical</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/ukgarage96.aacp" class="track track-default">Radio Record-Uk Garage</a></li>
+				<li> | </li>
+				
+				<li><a href="http://radiorecord.hostingradio.ru/uplift96.aacp" class="track track-default">Radio Record-Uplifting</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/vip96.aacp" class="track track-default">Radio Record-Vip House</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/workout96.aacp" class="track track-default">Radio Record-Workout</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/deti96.aacp" class="track track-default">Radio Record-Веснушка
+FM</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/gast96.aacp" class="track track-default">Radio Record-
+Гастарбайтер FM</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/gop96.aacp" class="track track-default">Radio Record-Гоп FM</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/mf96.aacp" class="track track-default">Radio Record-Маятник
+Фуко</a></li>
+				<li> | </li>
+				
+				<li><a href="http://radiorecord.hostingradio.ru/mdl96.aacp" class="track track-default">Radio Record-Медляк FM</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/naft96.aacp" class="track track-default">Radio Record-Нафталин
+FM</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/rv96.aacp" class="track track-default">Radio Record-Руки Вверх!</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/symph96.aacp" class="track track-default">Radio Record-Симфония
+FM</a></li>
+				<li> | </li>
+				<li><a href="http://radiorecord.hostingradio.ru/sd9096.aacp" class="track track-default">Radio Record-
+Супердискотека 90-х</a></li>
+				
+			</ul>
+			
+			<p>
+				<span class="play-state"></span> :
+				<span class="track-name">nothing</span>
+				- playback time:
+				<span class="jp-current-time"></span>
+			</p>
+			<ul>
+				<li><a class="jp-play" href="#">Play</a></li>
+				<li><a class="jp-pause" href="#">Pause</a></li>
+				<li><a class="jp-stop" href="#">Stop</a></li>
+			</ul>
+			<ul>
+				<li>volume :</li>
+				<li><a class="jp-mute" href="#">Mute</a></li>
+				<li><a class="jp-unmute" href="#">Unmute</a></li>
+				<li> <a class="jp-volume-bar" href="#">|&lt;----------&gt;|</a></li>
+				<li><a class="jp-volume-max" href="#">Max</a></li>
+			</ul>
+		</div>
+		<br>
+		<style>
+   .btn {
+    display: inline-block; /* Строчно-блочный элемент */
+    background: #8C959D; /* Серый цвет фона */
+    color: #fff; /* Белый цвет текста */
+    padding: 0.5rem 0.5rem; /* Поля вокруг текста */
+    text-decoration: none; /* Убираем подчёркивание */
+    border-radius: 50px; /* Скругляем уголки */
+   }
+  </style>
+
+ <body> 
+  <a href="online-music-radio-stations-2.html" target="_blank" class="btn">Previous</a>
+  <a href="online-music-radio-stations-4.html" target="_blank" class="btn">Next</a>
+			
+		</div>
+
+</body>
+
+</html>
